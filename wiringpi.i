@@ -6,7 +6,6 @@ extern int  wiringPiSetup     (void) ;
 extern int  wiringPiSetupSys  (void) ;
 extern int  wiringPiSetupGpio (void) ;
 
-extern void wiringPiGpioMode  (int mode) ;
 extern void pullUpDnControl   (int pin, int pud) ;
 extern void pinMode           (int pin, int mode) ;
 extern void digitalWrite      (int pin, int value) ;
@@ -30,5 +29,5 @@ extern void  serialPrintf    (int fd, char *message, ...) ;
 %{
 #include "WiringPi/wiringPi/wiringPi.h"
 #include "WiringPi/wiringPi/wiringShift.h"
-#include "WiringPi/wiringPi/serial.h"
+#include "WiringPi/wiringPi/wiringSerial.h"
 %}
