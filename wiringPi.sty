@@ -1,0 +1,33 @@
+\ProvidesPackage{wiringPi}
+
+\RequirePackage{ifluatex}
+
+\ifluatex
+\directlua{require "wiringpi-sys"}
+
+\def\wPicheckPins#1{%
+  \directlua{wiringpi.checkPins(#1)}%
+}
+
+\def\wPiReadPin#1{%
+  \directlua{wiringpi.digitalRead(#1)}%
+}
+
+\def\wPiWritePin#1#2{%
+  \directlua{wiringpi.digitalWrite(#1,#2)}%
+}
+
+\def\wPiPinEncoding#1{%
+  \directlua{wiringpi.pinNumbersBy(#1)}%
+}
+
+% Fractions of a second rather than milliseconds
+\def\wPiSleep#1{%
+  \directlua{wiringpi.delay(math.floor(#1 * 1000))}%
+}
+
+\else
+\PackageInfo{wiringPi}{LuaTeX not detected}
+\fi
+
+\endinput
