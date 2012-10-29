@@ -8,11 +8,13 @@ extern int  wiringPiSetupGpio (void) ;
 
 extern void pullUpDnControl   (int pin, int pud) ;
 extern void pinMode           (int pin, int mode) ;
+extern int pinGetMode           (int pin ) ;
 extern void digitalWrite      (int pin, int value) ;
 extern void pwmWrite          (int pin, int value) ;
 extern int  digitalRead       (int pin) ;
 extern void shiftOut          (uint8_t dPin, uint8_t cPin, uint8_t order, uint8_t val);
 extern uint8_t shiftIn        (uint8_t dPin, uint8_t cPin, uint8_t order);
+extern int  wpiPinToGpio        (int wpiPin) ;
 
 extern void         delay             (unsigned int howLong) ;
 extern void         delayMicroseconds (unsigned int howLong) ;
